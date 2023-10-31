@@ -1,5 +1,13 @@
+import PostsList from "./features/posts/PostsList";
+import AddNewPost from "./features/posts/AddNewPost";
+
 function App() {
-  return <div className="App">App</div>;
+  return (
+    <main className="App">
+      <AddNewPost />
+      <PostsList />
+    </main>
+  );
 }
 
 export default App;
