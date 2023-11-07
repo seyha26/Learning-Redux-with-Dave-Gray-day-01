@@ -6,7 +6,6 @@ import { getCounter, increaseCount } from "../features/posts/postsSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const count = useSelector(getCounter);
-  console.log(count);
   return (
     <header className="Header">
       <h1>Redux Blog</h1>
