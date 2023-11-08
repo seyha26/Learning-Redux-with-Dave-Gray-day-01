@@ -7,27 +7,27 @@ import {
   selectPostIds,
 } from "./postsSlice";
 import PostsExcerpt from "./PostsExcerpt";
+import { useGetPostsQuery } from "./postsSlice";
 
 const PostsList = () => {
-  const dispatch = useDispatch();
-  const orderedPostIds = useSelector(selectPostIds);
-  const postsStatus = useSelector(getPostsStatus);
-  const error = useSelector(getPostsError);
+  const { isLoading, isSuccess, isError, error } = useGetPostsQuery();
 
-  useEffect(() => {
-    if (postsStatus === "idle") {
-      dispatch(fetchPosts());
-    }
-  }, [postsStatus, dispatch]);
+  const orderedPostIds = useSelector(selectPostIds);
+  // useEffect(() => {
+  //   if (postsStatus === "idle") {
+  //     dispatch(fetchPosts());
+  //   }
+  // }, [postsStatus, dispatch]);
 
   let content;
-  if (postsStatus === "loading") {
+  if (isLoading) {
     content = <p>Loading...</p>;
-  } else if (postsStatus === "succeeded") {
+  } else if (isSuccess) {
     content = orderedPostIds.map((postId) => (
       <PostsExcerpt key={postId} postId={postId} />
     ));
-  } else if (postsStatus === "failed") {
+    console.log(orderedPostIds);
+  } else if (isError) {
     content = <p>{error}</p>;
   }
   return <section>{content}</section>;

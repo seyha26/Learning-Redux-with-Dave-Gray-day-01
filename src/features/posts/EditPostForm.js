@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deletePost, selectPostById, updatePost } from "./postsSlice";
+import {
+  useDeletePostMutation,
+  selectPostByIds,
+  useUpdatePostMutation,
+} from "./postsSlice";
 import { selectAllUsers } from "../users/usersSlice";
 
 const EditPostForm = () => {
   const { postId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const post = useSelector((state) => selectPostById(state, Number(postId)));
+  const post = useSelector((state) => selectPostByIds(state, Number(postId)));
+  const [updatePost, { isLoading }] = useUpdatePostMutation();
+  const [deletePost] = useDeletePostMutation();
 
   const users = useSelector(selectAllUsers);
 
@@ -21,36 +27,34 @@ const EditPostForm = () => {
     <option value={user.id}>{user.name}</option>
   ));
 
-  const canSave =
-    [title, content, userId].every(Boolean) && requestState === "idle";
+  const canSave = [title, content, userId].every(Boolean) && !isLoading;
 
-  const onSavePostClicked = () => {
+  const onSavePostClicked = async () => {
     if (canSave) {
       try {
-        setRequestStatus("pending");
-        dispatch(
-          updatePost({
-            id: Number(postId),
-            title,
-            body: content,
-            reactions: post.reactions,
-            userId,
-          })
-        );
+        await updatePost({
+          id: Number(postId),
+          title,
+          body: content,
+          reactions: post.reactions,
+          userId: Number(userId),
+        });
+
         setTitle("");
         setContent("");
         setUserId("");
         navigate(`/post/${postId}`);
       } catch (error) {
         console.log(error.message);
-      } finally {
-        setRequestStatus("idle");
       }
     }
   };
 
-  const onDeletePostClicked = () => {
-    dispatch(deletePost({ id: Number(postId) }));
+  const onDeletePostClicked = async () => {
+    await deletePost({ id: Number(postId) });
+    setTitle("");
+    setContent("");
+    setUserId("");
     navigate("/");
   };
 
