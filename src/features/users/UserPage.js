@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectPostsByUserId } from "../posts/postsSlice";
 import { useGetPostsByUserIdQuery } from "../posts/postsSlice";
 import { selectUserById } from "./usersSlice";
 
@@ -14,11 +13,7 @@ const UserPage = () => {
     isSuccess,
     isError,
     error,
-  } = useGetPostsByUserIdQuery();
-
-  const orderedPost = postsForUser
-    .slice()
-    .sort((a, b) => b.date.localeCompare(a.date));
+  } = useGetPostsByUserIdQuery(userId);
 
   let content;
 
@@ -35,11 +30,6 @@ const UserPage = () => {
   } else if (isError) {
     content = <p>{error}</p>;
   }
-  const postTitles = orderedPost.map((post) => (
-    <li key={post.id}>
-      <Link to={`/post/${post.id}`}>{post.title}</Link>
-    </li>
-  ));
 
   return (
     <section>

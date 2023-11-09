@@ -24,7 +24,9 @@ const EditPostForm = () => {
   const [userId, setUserId] = useState(post.userId);
 
   const usersOptions = users.map((user) => (
-    <option value={user.id}>{user.name}</option>
+    <option key={user.id} value={user.id}>
+      {user.name}
+    </option>
   ));
 
   const canSave = [title, content, userId].every(Boolean) && !isLoading;

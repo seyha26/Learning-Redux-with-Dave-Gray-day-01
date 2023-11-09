@@ -331,35 +331,59 @@
       "date": "2023-11-08T10:01:06.383Z"
     },
     {
-      "userId": 2,
       "id": 15,
       "title": "eveniet quod temporibus",
       "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae",
       "reactions": {
-        "thumbsUp": 2,
+        "thumbsUp": 3,
         "wow": 2,
         "heart": 2,
         "rocket": 0,
         "coffee": 0
-      }
+      },
+      "userId": 1,
+      "date": "2023-11-09T01:08:29.467Z"
     },
     {
-      "userId": 2,
       "id": 16,
-      "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
-      "body": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nvoluptatem quis ullam qui in alias quia est\nconsequatur magni mollitia accusamus ea nisi voluptate dicta"
+      "title": "My edited Post",
+      "body": "This content was edited.",
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "userId": 6,
+      "date": "2023-11-09T01:36:44.383Z"
     },
     {
-      "userId": 2,
       "id": 17,
       "title": "fugit voluptas sed molestias voluptatem provident",
-      "body": "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo"
+      "body": "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo",
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      },
+      "userId": 1,
+      "date": "2023-11-09T01:58:55.663Z"
     },
     {
       "userId": 2,
       "id": 18,
       "title": "voluptate et itaque vero tempora molestiae",
-      "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam"
+      "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam",
+      "reactions": {
+        "thumbsUp": 1,
+        "wow": 0,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      }
     },
     {
       "userId": 2,
@@ -497,7 +521,14 @@
       "userId": 5,
       "id": 42,
       "title": "commodi ullam sint et excepturi error explicabo praesentium voluptas",
-      "body": "odio fugit voluptatum ducimus earum autem est incidunt voluptatem\nodit reiciendis aliquam sunt sequi nulla dolorem\nnon facere repellendus voluptates quia\nratione harum vitae ut"
+      "body": "odio fugit voluptatum ducimus earum autem est incidunt voluptatem\nodit reiciendis aliquam sunt sequi nulla dolorem\nnon facere repellendus voluptates quia\nratione harum vitae ut",
+      "reactions": {
+        "thumbsUp": 0,
+        "wow": 1,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 0
+      }
     },
     {
       "userId": 5,
@@ -869,10 +900,6 @@
       "date": "2022-04-26T23:03:52.299Z"
     },
     {
-      "reactions": "coffee",
-      "id": 103
-    },
-    {
       "title": "My 3rd Post edited",
       "body": "New post  35e",
       "userId": 1,
@@ -885,6 +912,20 @@
         "coffee": 0
       },
       "id": 104
+    },
+    {
+      "title": "My 5th Post",
+      "body": "hello world!",
+      "userId": 5,
+      "date": "2023-11-09T01:59:06.367Z",
+      "reactions": {
+        "thumbsUp": 4,
+        "wow": 1,
+        "heart": 0,
+        "rocket": 0,
+        "coffee": 1
+      },
+      "id": 105
     }
   ]
 }
